@@ -7,14 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestesComponent implements OnInit {
 
+
+add(): void { 
+this.bebidas
+
+  console.log('add');
+}
+    
+
+
   
- 
-  bebidas: string[]= ['com' , 'sem'];
+  bebidas: string[]= [
+    'com',
+    'sem'
+  ];
 
   constructor() {
    }
 
   ngOnInit(): void {
+   
   }
 
 }
