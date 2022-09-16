@@ -1,3 +1,6 @@
+import { RouterModule } from '@angular/router';
+import { BebidasComponent } from './../../../../rotas-rotas-rotas/src/app/bebidas/bebidas.component';
+import { Tservice } from './../tservice.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,26 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestesComponent implements OnInit {
 
+  bebidas: string[]= [];
+  tservice: Tservice;
 
-add(): void { 
-this.bebidas
-
-  console.log('add');
-}
+  constructor(private _tservice: Tservice,
+   ) {
+    this.tservice = _tservice;
     
+  }
 
+  Bebidas() { 
+   // this.tservice.getBebidas();
+  console.log("testando")
+ 
+  }
 
-  
-  bebidas: string[]= [
-    'com',
-    'sem'
-  ];
+  refil(){
+    this.tservice.getRefil();
+    console.log('testando refil')
+  }
 
-  constructor() {
-   }
-
-  ngOnInit(): void {
-   
+  ngOnInit() {
+   this.bebidas = this.tservice.getBebidas();
   }
 
 }
